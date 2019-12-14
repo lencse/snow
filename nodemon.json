@@ -1,0 +1,13 @@
+{
+    "ignore": [
+        "src",
+        "public",
+        "public/**",
+        ".DS_Store",
+        ".git",
+        "logs",
+        "build/data/**",
+        "build/views/**",
+        "config"
+    ]
+}
