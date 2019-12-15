@@ -59,10 +59,13 @@ const filenames = {
 
 module.exports = webpackMerge(
     {
-        entry: [
-            './build/compile/src/app.js',
-            './styles/main.scss'
-        ],
+        entry: {
+            main: [
+                './build/compile/src/app.js',
+                './styles/main.scss'
+            ],
+            worker: './build/compile/src/worker.js'
+        },
         output: {
             filename: filenames.js,
             path: path.resolve(__dirname, dirs.dist)
@@ -78,10 +81,10 @@ module.exports = webpackMerge(
                 filename: filenames.css,
                 chunkFilename: filenames.cssChunks
             }),
-            // new CopyPlugin([
-            //     { from: 'build/data', to: 'data' },
-            //     { from: '.netlify', to: '' },
-            // ])
+            new CopyPlugin([
+                // { from: 'build/compile/src/worker', to: '' },
+                // { from: '.netlify', to: '' },
+            ])
         ],
         module: {
             rules: [

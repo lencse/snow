@@ -8,7 +8,8 @@
         "preserveConstEnums": true,
         "sourceMap": true,
         "experimentalDecorators": true,
-        "noUnusedLocals": true
+        "noUnusedLocals": false,
+        "lib": ["ES2018", "DOM"]
     },
     "exclude": [
         "build",
